@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const cors = require('cors');
 const express = require('express');
 const app = express();
 const Product = require('./modals/Product.js');
@@ -6,7 +7,7 @@ const productRoute = require('./routes/ProductRoute.js');
 const authRoute = require('./routes/authRoute.js');
 
 //middleware
-
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
